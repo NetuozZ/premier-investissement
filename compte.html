@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Mon compte — Premier Investissement Immobilier</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:Inter,Arial,sans-serif;background:#09070d;color:#f7f4fb;min-height:100vh}
+a{text-decoration:none;color:inherit}.wrap{max-width:1100px;margin:auto;padding:28px 22px}
+nav{display:flex;align-items:center;justify-content:space-between;margin-bottom:60px}.logo{font-weight:800;font-size:18px}.logo span{color:#a970ff}.nav-right{display:flex;gap:12px;align-items:center}.back{color:#bcb5c8;font-size:14px}
+.menu{position:relative}.menu-btn{width:44px;height:44px;border:1px solid #30283a;border-radius:11px;background:#121019;color:#fff;font-size:22px;cursor:pointer}.dropdown{display:none;position:absolute;right:0;top:52px;width:220px;background:#121019;border:1px solid #30283a;border-radius:14px;padding:8px;box-shadow:0 20px 50px #0008;z-index:20}.dropdown.open{display:block}.dropdown a,.dropdown button{display:block;width:100%;padding:11px 12px;border:0;background:none;color:#eee;text-align:left;border-radius:9px;cursor:pointer;font-size:14px}.dropdown a:hover,.dropdown button:hover{background:#21182d}
+.card{max-width:650px;margin:0 auto;background:#121019;border:1px solid #292332;border-radius:22px;padding:32px;box-shadow:0 20px 60px #0005}h1{font-size:34px;margin:0 0 10px;text-align:center}.sub{text-align:center;color:#aaa1b4;margin:0 0 26px;line-height:1.6}
+.tabs{display:grid;grid-template-columns:1fr 1fr;gap:8px;background:#0c0a10;padding:5px;border-radius:12px;margin-bottom:22px}.tabs button{border:0;background:transparent;color:#a9a1b2;padding:11px;border-radius:9px;cursor:pointer;font-weight:700}.tabs button.active{background:#241932;color:#fff}
+label{display:block;font-size:13px;font-weight:700;margin:15px 0 7px}input{width:100%;padding:13px 14px;border-radius:11px;border:1px solid #30283a;background:#0c0a10;color:#fff;outline:none}input:focus{border-color:#9b5cff}
+.btn{width:100%;border:0;border-radius:11px;padding:14px;margin-top:20px;background:linear-gradient(135deg,#8d4dff,#b16cff);color:#fff;font-weight:800;cursor:pointer}.note{font-size:12px;color:#81798b;line-height:1.5;margin-top:16px;text-align:center}
+.hidden{display:none!important}.success{text-align:center;padding:18px;border-radius:15px;background:#101a14;border:1px solid #254d35;color:#c9f8d7;margin:20px 0}.account-actions{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:22px}.action{display:flex;justify-content:center;padding:14px;border-radius:11px;background:#8d4dff;font-weight:800}.action.secondary{background:#1a1422;border:1px solid #30283a}
+.profile{background:#0c0a10;border:1px solid #292332;border-radius:15px;padding:18px;margin-top:18px;color:#c6becd}.profile strong{display:block;color:#fff;margin-bottom:6px}
+</style></head>
+<body><div class="wrap">
+<nav><a class="logo" href="index.html">Premier <span>Investissement Immobilier</span></a>
+<div class="nav-right"><a class="back" href="index.html">Accueil</a><div class="menu"><button class="menu-btn" id="menuBtn">☰</button><div class="dropdown" id="dropdown">
+<a href="index.html">Accueil</a><a href="acheter.html">Acheter la formation</a><a href="espace-client.html" id="courseItem" class="hidden">Ma formation</a><button id="logoutTop">Se déconnecter</button>
+</div></div></div></nav>
+
+<div class="card" id="authCard">
+<h1>Ton compte</h1><p class="sub">Crée ton compte ou connecte-toi pour gérer ton accès à la formation.</p>
+<div class="tabs"><button id="loginTab" class="active">Se connecter</button><button id="signupTab">S'inscrire</button></div>
+<form id="authForm">
+<div id="nameField" class="hidden"><label for="name">Prénom</label><input id="name" type="text" autocomplete="given-name"></div>
+<label for="email">Adresse e-mail</label><input id="email" type="email" autocomplete="email" required>
+<label for="password">Mot de passe</label><input id="password" type="password" autocomplete="current-password" minlength="8" required>
+<button class="btn" id="submitBtn" type="submit">Se connecter</button>
+</form>
+<p class="note">Créer un compte ne donne pas automatiquement accès à la formation. L'accès est accordé après achat.</p>
+</div>
+
+<div class="card hidden" id="dashboard">
+<h1 id="welcomeTitle">Bienvenue 👋</h1>
+<div class="success" id="successMessage">Votre compte a bien été créé. Vous pouvez maintenant acheter la formation.</div>
+<div class="profile"><strong>Mon compte</strong><span id="emailDisplay"></span></div>
+<div class="account-actions">
+<a class="action" id="purchaseBtn" href="acheter.html">Acheter la formation</a>
+<a class="action secondary hidden" id="courseBtn" href="espace-client.html">Ma formation</a>
+</div>
+<button class="btn" id="logoutBtn" type="button">Se déconnecter</button>
+</div>
+</div>
+<script>
+let mode="login";
+const form=document.getElementById("authForm"), nameField=document.getElementById("nameField"), submitBtn=document.getElementById("submitBtn");
+const loginTab=document.getElementById("loginTab"), signupTab=document.getElementById("signupTab"), authCard=document.getElementById("authCard"), dashboard=document.getElementById("dashboard");
+const purchaseBtn=document.getElementById("purchaseBtn"),courseBtn=document.getElementById("courseBtn"),successMessage=document.getElementById("successMessage");
+
+function setMode(next){mode=next;loginTab.classList.toggle("active",mode==="login");signupTab.classList.toggle("active",mode==="signup");nameField.classList.toggle("hidden",mode!=="signup");submitBtn.textContent=mode==="login"?"Se connecter":"Créer mon compte"}
+loginTab.onclick=()=>setMode("login");signupTab.onclick=()=>setMode("signup");
+function users(){return JSON.parse(localStorage.getItem("pi_users_demo")||"{}")}
+function saveUsers(u){localStorage.setItem("pi_users_demo",JSON.stringify(u))}
+function current(){return JSON.parse(localStorage.getItem("pi_current_demo")||"null")}
+function showDashboard(user,created=false){
+ authCard.classList.add("hidden");dashboard.classList.remove("hidden");
+ document.getElementById("welcomeTitle").textContent="Bienvenue "+(user.name?user.name+" 👋":"👋");
+ document.getElementById("emailDisplay").textContent=user.email;
+ successMessage.textContent=created?"Votre compte a bien été créé. Vous pouvez maintenant acheter la formation.":(user.paid?"Votre achat est associé à ce compte.":"Vous êtes connecté. Votre compte n'a pas encore acheté la formation.");
+ purchaseBtn.classList.toggle("hidden",!!user.paid);courseBtn.classList.toggle("hidden",!user.paid);
+ document.getElementById("courseItem").classList.toggle("hidden",!user.paid);
+}
+form.addEventListener("submit",e=>{e.preventDefault();const email=document.getElementById("email").value.trim().toLowerCase(),password=document.getElementById("password").value,u=users();
+if(mode==="signup"){if(u[email])return alert("Un compte existe déjà avec cette adresse e-mail.");const user={name:document.getElementById("name").value.trim(),email,password,paid:false};u[email]=user;saveUsers(u);localStorage.setItem("pi_current_demo",JSON.stringify(user));showDashboard(user,true)}
+else{if(!u[email]||u[email].password!==password)return alert("Adresse e-mail ou mot de passe incorrect.");localStorage.setItem("pi_current_demo",JSON.stringify(u[email]));showDashboard(u[email],false)}});
+function logout(){localStorage.removeItem("pi_current_demo");location.href="index.html"}document.getElementById("logoutBtn").onclick=logout;document.getElementById("logoutTop").onclick=logout;
+document.getElementById("menuBtn").onclick=()=>document.getElementById("dropdown").classList.toggle("open");
+const c=current();if(c)showDashboard(c,false);
+</script></body></html>
