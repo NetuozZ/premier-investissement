@@ -3,201 +3,70 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Premier Investissement — Espace membre</title>
+<title>Premier Investissement Immobilier</title>
 <style>
-:root{--bg:#09090b;--panel:#111114;--panel2:#18181b;--line:#27272a;--text:#fafafa;--muted:#a1a1aa;--accent:#d9ff45}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,Arial;line-height:1.5}button,input{font:inherit}.hidden{display:none!important}
-.btn{border:0;background:var(--accent);color:#101010;padding:12px 17px;border-radius:10px;font-weight:800;cursor:pointer}.ghost{background:transparent;color:var(--text);border:1px solid var(--line)}
-.auth{min-height:100vh;display:grid;place-items:center;padding:24px}.auth-card{width:min(440px,100%);background:var(--panel);border:1px solid var(--line);border-radius:22px;padding:34px}.brand{font-weight:900;font-size:18px;margin-bottom:35px}.brand span{color:var(--accent)}
-.auth h1{font-size:34px;line-height:1.05;margin:0 0 8px}.muted{color:var(--muted)}label{display:block;font-size:13px;font-weight:700;margin:20px 0 7px}input{width:100%;background:#0c0c0f;border:1px solid var(--line);color:var(--text);padding:13px;border-radius:10px;outline:none}input:focus{border-color:#555}
-.demo{font-size:12px;color:#71717a;margin-top:14px}.error{color:#ff8d8d;font-size:13px;margin-top:12px}
-.app{display:flex;min-height:100vh}.sidebar{width:260px;border-right:1px solid var(--line);padding:25px 17px;position:fixed;inset:0 auto 0 0;background:#0b0b0d}.side-brand{padding:0 12px 28px;font-weight:900}.side-brand span{color:var(--accent)}.navbtn{width:100%;background:none;color:var(--muted);border:0;text-align:left;padding:12px;border-radius:9px;cursor:pointer;margin:2px 0}.navbtn.active,.navbtn:hover{background:var(--panel2);color:var(--text)}.bottom{position:absolute;bottom:20px;left:17px;right:17px}
-.main{margin-left:260px;width:calc(100% - 260px);padding:35px 5% 60px}.top{display:flex;justify-content:space-between;align-items:center;margin-bottom:35px}.avatar{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;background:var(--accent);color:#111;font-weight:900}
-h2{font-size:32px;letter-spacing:-1px;margin:0}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.card{background:var(--panel);border:1px solid var(--line);border-radius:17px;padding:23px}.stat{font-size:32px;font-weight:900}.progress{height:8px;background:#242427;border-radius:99px;overflow:hidden}.bar{height:100%;width:0;background:var(--accent);transition:.3s}
-.modules{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:22px}.module{background:var(--panel);border:1px solid var(--line);border-radius:17px;padding:22px;cursor:pointer}.module.locked{opacity:.55;cursor:not-allowed}.module h3{margin:8px 0 5px}.tag{font-size:11px;color:var(--accent);font-weight:900;letter-spacing:.5px}.lesson{border-top:1px solid var(--line);padding:14px 0}.lesson:first-child{border-top:0}.lesson button{float:right}.reader{max-width:850px}.back{margin-bottom:20px}.reader-card{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:28px}.reader-card h1{line-height:1.1}.check{display:flex;gap:10px;align-items:center;margin-top:25px;color:#d4d4d8}.check input{width:auto}.profile{max-width:650px}
-.course-head{display:flex;justify-content:space-between;align-items:center;gap:20px;margin-bottom:24px}.all-modules{display:flex;flex-direction:column;gap:14px}.module-full{background:var(--panel);border:1px solid var(--line);border-radius:17px;overflow:hidden}.module-full.locked{opacity:.62}.module-full-head{padding:22px;display:flex;align-items:center;gap:18px}.module-number{width:46px;height:46px;border-radius:12px;display:grid;place-items:center;background:#202024;color:var(--accent);font-weight:900}.module-full.locked .module-number{color:#777}.module-info{flex:1}.module-info h3{margin:0 0 4px;font-size:19px}.module-info p{margin:0;color:var(--muted);font-size:13px}.module-percent{font-weight:800}.lesson-list{border-top:1px solid var(--line);padding:0 22px;background:#0e0e10}.lesson-row{display:flex;align-items:center;gap:13px;padding:15px 0;border-bottom:1px solid #202023}.lesson-row:last-child{border-bottom:0}.lesson-status{width:25px;height:25px;border:1px solid #3a3a3f;border-radius:50%;display:grid;place-items:center;font-size:12px}.lesson-status.done{background:var(--accent);color:#111;border-color:var(--accent)}.lesson-name{flex:1}.lesson-action{font-size:12px;color:var(--muted)}.module-open{margin-top:0}@media(max-width:800px){.course-head{align-items:flex-start;flex-direction:column}.course-total{width:100%}}
-@media(max-width:800px){.sidebar{position:static;width:100%;border-right:0;border-bottom:1px solid var(--line)}.app{display:block}.main{margin:0;width:100%;padding:25px}.bottom{position:static;margin-top:20px}.grid,.modules{grid-template-columns:1fr}.top{gap:15px}.side-nav{display:flex;overflow:auto}.navbtn{white-space:nowrap;width:auto}}
-</style>
-
-<style>
-  #loginScreen { display: none !important; }
-  #app { display: block !important; }
+:root{--bg:#080a0f;--panel:#10131b;--line:#252a35;--text:#f7f7fa;--muted:#9ca3b2;--accent:#8b5cf6}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font-family:Arial,sans-serif;line-height:1.6}.c{width:min(1100px,92%);margin:auto}
+nav{height:72px;border-bottom:1px solid var(--line);display:flex;align-items:center}nav .c{display:flex;justify-content:space-between;align-items:center}.logo{font-weight:900}.logo span{color:var(--accent)}
+nav a{color:#aeb4c2;text-decoration:none;margin-left:20px}.btn{display:inline-block;padding:14px 23px;border-radius:11px;font-weight:800;text-decoration:none}.primary{background:#fff;color:#080a0f}.secondary{border:1px solid #343946;color:#fff}
+.hero{text-align:center;padding:100px 0 85px;background:radial-gradient(circle at 50% 0,#2b1950,transparent 48%)}.badge{display:inline-block;padding:7px 13px;border:1px solid #3c2b65;background:#171225;color:#c7b7ff;border-radius:99px;font-size:12px;font-weight:800}
+h1{font-size:clamp(42px,7vw,74px);line-height:1.02;letter-spacing:-3px;max-width:900px;margin:22px auto}.hero p{max-width:700px;margin:0 auto 30px;color:#aeb4c2;font-size:19px}.actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}.micro{font-size:12px;color:#707789;margin-top:13px}
+section{padding:78px 0}.title{text-align:center;font-size:38px;line-height:1.1;margin:0 0 12px}.sub{text-align:center;color:var(--muted);max-width:700px;margin:0 auto 42px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}.card,.module,.lesson,.price{background:var(--panel);border:1px solid var(--line);border-radius:17px;padding:24px}.card h3{margin:8px 0}.card p,.module p,.lesson p{color:var(--muted);margin:0}
+.modules{display:grid;grid-template-columns:1fr 1fr;gap:15px}.module b{display:block;margin-bottom:7px}.module ul{margin:8px 0 0;padding-left:20px;color:#aeb4c2;font-size:14px}.module li{padding:2px}
+.lessonwrap{display:grid;grid-template-columns:1.1fr .9fr;gap:18px}.lesson h3{font-size:28px;margin:8px 0}.label{color:#a78bfa;font-size:11px;font-weight:900;letter-spacing:.12em}.points{margin-top:20px}.point{border-top:1px solid var(--line);padding:12px 0;color:#bfc4cf}.point b{color:#fff}
+.price{max-width:560px;margin:auto;text-align:center;padding:38px}.old{text-decoration:line-through;color:#707789}.amount{font-size:60px;font-weight:900;line-height:1}.price ul{text-align:left;list-style:none;padding:0;color:#c0c5cf}.price li{padding:7px}.price li:before{content:"✓";color:#a78bfa;font-weight:900;margin-right:9px}.note{font-size:12px!important;color:#707789!important}
+.faq{max-width:800px;margin:auto}.faq details{border-bottom:1px solid var(--line);padding:18px 0}.faq summary{font-weight:800;cursor:pointer}.faq p{color:var(--muted)}
+footer{text-align:center;border-top:1px solid var(--line);padding:30px;color:#707789;font-size:12px}
+@media(max-width:760px){nav .links{display:none}.grid,.modules,.lessonwrap{grid-template-columns:1fr}.hero{padding:70px 0}.hero p{font-size:17px}section{padding:58px 0}h1{letter-spacing:-2px}.title{font-size:31px}}
 </style>
 </head>
 <body>
-<div id="auth" class="auth">
-  <div class="auth-card">
-    <div class="brand">PREMIER<span>INVESTISSEMENT</span></div>
-    <h1>Bienvenue dans ton espace.</h1>
-    <p class="muted">Connecte-toi pour accéder à ta formation.</p>
-    <label>Email</label><input id="email" type="email" placeholder="toi@email.com">
-    <label>Mot de passe</label><input id="password" type="password" placeholder="••••••••">
-    <button class="btn" style="width:100%;margin-top:22px" onclick="login()">Se connecter</button>
-    <div id="error" class="error"></div>
-    <div class="demo">Prototype : utilise n'importe quel email + un mot de passe de 4 caractères minimum.</div>
-  </div>
-</div>
+<nav><div class="c"><div class="logo">PREMIER<span>INVESTISSEMENT</span></div><div class="links"><a href="#programme">Programme</a><a href="#lecons">Leçons</a><a href="#prix">Tarif</a></div><a class="btn secondary" href="#prix">Voir l'offre</a></div></nav>
 
-<div id="app" class="app hidden">
-  <aside class="sidebar">
-    <div class="side-brand">PREMIER<span>INVESTISSEMENT</span></div>
-    <div class="side-nav">
-      <button class="navbtn active" onclick="show('dashboard',this)">Tableau de bord</button>
-      <button class="navbtn" onclick="show('course',this)">Ma formation</button>
-      <button class="navbtn" onclick="show('profile',this)">Mon profil</button>
-    </div>
-    <div class="bottom"><button class="navbtn" onclick="logout()">↪ Se déconnecter</button></div>
-  </aside>
+<header class="hero"><div class="c">
+<span class="badge">FORMATION IMMOBILIÈRE EN LIGNE</span>
+<h1>Apprends à analyser un projet immobilier avec méthode.</h1>
+<p>Un parcours structuré pour comprendre les chiffres, rechercher un bien, étudier son financement, identifier les risques et construire une décision réfléchie.</p>
+<div class="actions"><a class="btn primary" href="#prix">Accéder à la formation →</a><a class="btn secondary" href="#programme">Voir le programme</a></div>
+<div class="micro">6 modules • 24 leçons • Exercices pratiques • Outils d'analyse</div>
+</div></header>
 
-  <main class="main">
-    <div class="top"><div><div class="muted">Bonjour, <span id="username">Investisseur</span> 👋</div><h2 id="pageTitle">Tableau de bord</h2></div><div class="avatar" id="avatar">I</div></div>
+<section><div class="c"><h2 class="title">Une méthode plutôt que des informations dispersées.</h2><p class="sub">Tu avances étape par étape, des bases jusqu'à l'analyse complète d'un projet.</p>
+<div class="grid">
+<div class="card"><div>📚</div><h3>Apprendre les bases</h3><p>Comprendre le vocabulaire, les stratégies et les éléments essentiels avant de chercher un bien.</p></div>
+<div class="card"><div>📊</div><h3>Analyser les chiffres</h3><p>Construire le coût total, estimer les revenus, intégrer les charges et comparer des scénarios.</p></div>
+<div class="card"><div>🧠</div><h3>Prendre une décision</h3><p>Identifier les risques, vérifier les informations et décider de poursuivre, négocier ou abandonner.</p></div>
+</div></div></section>
 
-    <section id="dashboard">
-      <div class="grid">
-        <div class="card"><div class="muted">Progression</div><div class="stat" id="progressText">0%</div><div class="progress" style="margin-top:12px"><div class="bar" id="progressBar"></div></div></div>
-        <div class="card"><div class="muted">Modules</div><div class="stat">6</div><div class="muted">parcours complet</div></div>
-        <div class="card"><div class="muted">Leçons terminées</div><div class="stat" id="doneText">0</div><div class="muted" id="totalText">sur 22</div></div>
-      </div>
-      <div class="card" style="margin-top:18px"><h3>Continuer la formation</h3><p class="muted">Reprends là où tu t'es arrêté.</p><button class="btn" onclick="show('course')">Accéder aux modules →</button></div>
-    </section>
+<section id="programme"><div class="c"><h2 class="title">Les 6 modules</h2><p class="sub">Chaque module correspond à une étape du processus.</p>
+<div class="modules">
+<div class="module"><b>01 — Comprendre l’investissement immobilier</b><p>Poser les bases.</p><ul><li>Pourquoi investir ?</li><li>Les grandes familles de projets</li><li>Le vocabulaire essentiel</li><li>Le risque avant le rendement</li></ul></div>
+<div class="module"><b>02 — Trouver et sélectionner un bien</b><p>Construire une recherche efficace.</p><ul><li>Définir son cahier des charges</li><li>Lire une annonce</li><li>Filtrer rapidement</li><li>Préparer la visite</li></ul></div>
+<div class="module"><b>03 — Analyser les chiffres</b><p>Transformer les données en analyse.</p><ul><li>Le coût total du projet</li><li>Estimer les revenus</li><li>Les charges</li><li>Construire des scénarios</li><li>Lire le résultat</li></ul></div>
+<div class="module"><b>04 — Financement et dossier</b><p>Comprendre le financement.</p><ul><li>Comprendre le financement</li><li>Préparer son dossier</li><li>Capacité et prudence</li><li>Comparer les propositions</li></ul></div>
+<div class="module"><b>05 — Négocier et sécuriser</b><p>Préparer et vérifier une opération.</p><ul><li>Préparer une négociation</li><li>Construire une offre</li><li>Vérifications</li><li>Savoir renoncer</li></ul></div>
+<div class="module"><b>06 — Passer de l’analyse à la décision</b><p>Structurer la décision et le suivi.</p><ul><li>La fiche d’investissement</li><li>Comité de décision</li><li>Plan d’action</li><li>Suivi après acquisition</li></ul></div>
+</div></div></section>
 
-    <section id="course" class="hidden">
-      <div class="course-head">
-        <div>
-          <div class="tag">PARCOURS COMPLET</div>
-          <h3 style="font-size:28px;margin:7px 0">Les 6 modules de ta formation</h3>
-          <p class="muted">Avance module par module et valide chaque leçon pour suivre ta progression.</p>
-        </div>
-        <div class="course-total card" style="padding:16px 20px;min-width:180px">
-          <div class="muted">Progression totale</div>
-          <strong id="courseProgress" style="font-size:25px">0%</strong>
-        </div>
-      </div>
-      <div class="all-modules" id="modules"></div>
-    </section>
+<section id="lecons"><div class="c"><h2 class="title">À quoi ressemble une leçon ?</h2><p class="sub">Les leçons combinent explications, exemples et mise en pratique.</p>
+<div class="lessonwrap"><div class="lesson"><div class="label">MODULE 1 • LEÇON 1</div><h3>Pourquoi investir ?</h3><p>Avant de chercher un appartement, il faut définir ce que l'on veut obtenir et les contraintes du projet.</p>
+<div class="points"><div class="point"><b>01 — L'objectif avant le bien</b><br>Définir ton objectif et tes contraintes.</div><div class="point"><b>02 — Le financement</b><br>Comprendre le rôle du crédit et de l'apport.</div><div class="point"><b>03 — Les vrais coûts</b><br>Ne pas confondre prix d'achat et coût global.</div><div class="point"><b>04 — Le risque</b><br>Tester les hypothèses avant de décider.</div></div></div>
+<div class="lesson"><h3>Dans chaque leçon</h3><div class="points"><div class="point">✓ Cours structuré</div><div class="point">✓ Exemples concrets</div><div class="point">✓ Exercices d'application</div><div class="point">✓ Erreurs à éviter</div><div class="point">✓ Résumé « À retenir »</div></div></div></div>
+</div></section>
 
-    <section id="reader" class="hidden reader"></section>
+<section id="prix"><div class="c"><h2 class="title">Commence la formation</h2><p class="sub">Accède au parcours complet et avance à ton rythme.</p>
+<div class="price"><div class="old">Prix normal : 79 €</div><div class="amount">49 €</div><p>Offre de lancement</p><ul><li>6 modules</li><li>24 leçons</li><li>Exercices pratiques</li><li>Outils d'analyse</li><li>Espace membre avec progression</li></ul>
+<a class="btn primary" style="width:100%;margin-top:10px" href="espace-client.html">Accéder à la formation →</a>
+<p class="note">Le paiement sera connecté ensuite. Cette page présente actuellement l'offre et le parcours.</p></div>
+</div></section>
 
-    <section id="profile" class="hidden profile">
-      <div class="card"><h3>Mon profil</h3><p class="muted">Compte de démonstration</p><label>Nom</label><input id="profileName" placeholder="Ton prénom"><label>Email</label><input id="profileEmail" disabled><button class="btn" style="margin-top:20px" onclick="saveProfile()">Enregistrer</button><p id="saved" class="muted"></p></div>
-    </section>
-  </main>
-</div>
+<section><div class="c"><h2 class="title">Questions fréquentes</h2><div class="faq">
+<details><summary>À qui s'adresse la formation ?</summary><p>Aux débutants qui souhaitent apprendre à structurer l'analyse d'un projet immobilier.</p></details>
+<details><summary>Faut-il déjà connaître l'immobilier ?</summary><p>Non, le parcours commence par les notions fondamentales.</p></details>
+<details><summary>La formation garantit-elle un résultat financier ?</summary><p>Non. Aucun rendement ou résultat financier n'est garanti. Le contenu est éducatif.</p></details>
+<details><summary>Est-ce du conseil financier ou juridique personnalisé ?</summary><p>Non. Les contenus sont généraux et pédagogiques. Pour une situation personnelle, il faut consulter les professionnels compétents.</p></details>
+</div></div></section>
 
-<script>
-const modules=[
-{title:"Comprendre l’investissement immobilier",lessons:[
-["Pourquoi investir ?", "Définis d’abord ton objectif : patrimoine, revenus complémentaires, diversification ou projet à long terme. Ton objectif détermine les critères d’analyse."],
-["Les grandes familles de projets","Logement classique, meublé, immeuble, colocation, courte durée ou locaux : chaque modèle possède ses contraintes, règles et risques."],
-["Le vocabulaire essentiel","Prix, frais d’acquisition, travaux, charges, loyers, vacance, financement, mensualité, cash-flow et rentabilité. Distingue toujours hypothèse et donnée vérifiée."],
-["Le risque avant le rendement","Un pourcentage élevé ne suffit pas. Analyse demande locative, état du bien, travaux, charges, financement et scénario défavorable."]
-]},
-{title:"Trouver et sélectionner un bien",lessons:[
-["Définir son cahier des charges","Écris zone, budget, type de bien, objectif, niveau de travaux acceptable et contraintes personnelles avant de chercher."],
-["Lire une annonce","Identifie prix, surface, emplacement, charges, DPE disponible, travaux, copropriété et informations manquantes."],
-["Filtrer rapidement","Crée une grille : cohérence du prix, demande potentielle, travaux, charges et possibilités d’exploitation."],
-["Préparer la visite","Vérifie état général, humidité, installations, parties communes, nuisances et documents à demander."]
-]},
-{title:"Analyser les chiffres",lessons:[
-["Le coût total du projet","Additionne prix, frais d’acquisition estimés, travaux, mobilier, financement et réserve de sécurité selon le projet."],
-["Estimer les revenus","Pars d’un loyer réaliste et documenté. Prévois vacance et distingue revenu théorique du revenu encaissé."],
-["Les charges","Liste charges non récupérables, assurance, entretien, gestion éventuelle, fiscalité et dépenses ponctuelles."],
-["Construire des scénarios","Crée au minimum un scénario central et un scénario défavorable pour tester la résistance du projet."]
-]},
-{title:"Financement et préparation du dossier",lessons:[
-["Comprendre le financement","Montant emprunté, durée, taux, assurance et coût total : compare les offres sur une base cohérente."],
-["Préparer son dossier","Organise revenus, charges, épargne, dettes et justificatifs demandés. Présente un projet clair et documenté."],
-["Capacité et prudence","Ne raisonne pas uniquement avec la mensualité maximale. Garde une marge pour imprévus et changements."],
-["Comparer les propositions","Regarde le coût global, les conditions et garanties, pas uniquement le taux affiché."]
-]},
-{title:"Négocier et sécuriser",lessons:[
-["Préparer une négociation","Appuie-toi sur des faits : comparables, travaux identifiés, charges, éléments du marché et risques."],
-["Construire une offre","Définis à l’avance ton prix maximum et tes conditions importantes. Évite les décisions sous pression."],
-["Vérifications","Demande les documents pertinents et fais vérifier les points techniques, juridiques et contractuels par les professionnels compétents."],
-["Savoir renoncer","Si les hypothèses changent fortement, réévalue le projet même si tu as déjà consacré du temps."]
-]},
-{title:"Passer de l’analyse à la décision",lessons:[
-["La fiche d’investissement","Résume hypothèses, coûts, revenus, risques, financement et scénarios sur une page."],
-["Le comité de décision","Réponds à une liste fixe de questions et fais relire les hypothèses importantes."],
-["Plan d’action","Organise recherche, visites, documents, financement, vérifications et étapes contractuelles."],
-["Suivi après acquisition","Compare revenus, dépenses, travaux et trésorerie aux hypothèses initiales."]
-]}
-];
-let state=JSON.parse(localStorage.getItem("piState")||"null")||{email:"",name:"",done:[]};
-let currentModule=0;
-
-function save(){localStorage.setItem("piState",JSON.stringify(state))}
-function login(){
- const e=document.getElementById("email").value.trim(),p=document.getElementById("password").value;
- if(!e||p.length<4){document.getElementById("error").textContent="Entre un email valide et un mot de passe d’au moins 4 caractères.";return}
- state.email=e;if(!state.name)state.name=e.split("@")[0];save();openApp();
-}
-function openApp(){
- document.getElementById("auth").classList.add("hidden");document.getElementById("app").classList.remove("hidden");
- document.getElementById("username").textContent=state.name;document.getElementById("avatar").textContent=state.name[0].toUpperCase();
- document.getElementById("profileEmail").value=state.email;document.getElementById("profileName").value=state.name;
- render();show("dashboard");
-}
-function logout(){document.getElementById("app").classList.add("hidden");document.getElementById("auth").classList.remove("hidden")}
-function show(id,btn){
- ["dashboard","course","profile","reader"].forEach(x=>document.getElementById(x).classList.add("hidden"));
- document.getElementById(id).classList.remove("hidden");
- document.querySelectorAll(".navbtn").forEach(x=>x.classList.remove("active"));if(btn)btn.classList.add("active");
- if(id==="course")render(); if(id==="dashboard")updateStats();
- document.getElementById("pageTitle").textContent=id==="dashboard"?"Tableau de bord":id==="course"?"Ma formation":id==="profile"?"Mon profil":"Lecture";
-}
-function isUnlocked(i){return i===0||modules[i-1].lessons.every((_,j)=>state.done.includes(i-1+"-"+j))}
-function render(){
- const el=document.getElementById("modules");el.innerHTML="";
- let totalDone=0,totalLessons=0;
- modules.forEach((m,i)=>{
-  const unlocked=isUnlocked(i);
-  const done=m.lessons.filter((_,j)=>state.done.includes(i+"-"+j)).length;
-  totalDone+=done; totalLessons+=m.lessons.length;
-  const percent=Math.round(done/m.lessons.length*100);
-  const div=document.createElement("div");
-  div.className="module-full "+(!unlocked?"locked":"");
-  div.innerHTML=`
-   <div class="module-full-head">
-    <div class="module-number">${unlocked?String(i+1).padStart(2,"0"):"🔒"}</div>
-    <div class="module-info">
-      <h3>Module ${i+1} — ${m.title}</h3>
-      <p>${done}/${m.lessons.length} leçons terminées</p>
-    </div>
-    <div class="module-percent">${percent}%</div>
-    ${unlocked?`<button class="btn module-open" onclick="openModule(${i})">Ouvrir</button>`:""}
-   </div>
-   <div class="progress" style="margin:0 22px 14px"><div class="bar" style="width:${percent}%"></div></div>
-   <div class="lesson-list">
-    ${m.lessons.map((l,j)=>{
-      const isDone=state.done.includes(i+"-"+j);
-      return `<div class="lesson-row">
-        <div class="lesson-status ${isDone?"done":""}">${isDone?"✓":""}</div>
-        <div class="lesson-name"><strong>Leçon ${j+1}</strong> — ${l[0]}</div>
-        <div class="lesson-action">${isDone?"Terminée":unlocked?"À faire":"Verrouillée"}</div>
-      </div>`;
-    }).join("")}
-   </div>`;
-  el.appendChild(div);
- });
- const percent=Math.round(totalDone/totalLessons*100);
- const cp=document.getElementById("courseProgress"); if(cp)cp.textContent=percent+"%";
- updateStats();
-}
-function updateStats(){
- const total=modules.reduce((a,m)=>a+m.lessons.length,0),done=state.done.length,p=Math.round(done/total*100);
- document.getElementById("progressText").textContent=p+"%";document.getElementById("progressBar").style.width=p+"%";document.getElementById("doneText").textContent=done;document.getElementById("totalText").textContent="sur "+total;
-}
-function openModule(i){
- currentModule=i;const m=modules[i],r=document.getElementById("reader");r.classList.remove("hidden");document.getElementById("course").classList.add("hidden");document.getElementById("dashboard").classList.add("hidden");document.getElementById("profile").classList.add("hidden");
- r.innerHTML=`<button class="btn ghost back" onclick="show('course')">← Retour aux modules</button><div class="reader-card"><div class="tag">MODULE ${String(i+1).padStart(2,"0")}</div><h1>${m.title}</h1><p class="muted">${m.lessons.length} leçons</p>${m.lessons.map((l,j)=>`<div class="lesson"><strong>Leçon ${j+1} — ${l[0]}</strong><button class="btn ${state.done.includes(i+"-"+j)?"ghost":""}" onclick="toggleDone(${i},${j})">${state.done.includes(i+"-"+j)?"✓ Terminée":"Terminer"}</button><p class="muted">${l[1]}</p></div>`).join("")}</div>`;
- document.getElementById("pageTitle").textContent=m.title;
-}
-function toggleDone(i,j){
- const key=i+"-"+j,idx=state.done.indexOf(key);if(idx>=0)state.done.splice(idx,1);else state.done.push(key);save();openModule(i);
-}
-function saveProfile(){state.name=document.getElementById("profileName").value.trim()||"Investisseur";save();document.getElementById("username").textContent=state.name;document.getElementById("avatar").textContent=state.name[0].toUpperCase();document.getElementById("saved").textContent="Profil enregistré.";setTimeout(()=>document.getElementById("saved").textContent="",1800)}
-if(state.email)openApp();
-</script>
-</body>
-</html>
+<footer>© 2026 Premier Investissement Immobilier — Formation éducative</footer>
+</body></html>
